@@ -12,5 +12,6 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0">Cd-Sammlung</TextBlock>
     </Grid>
 </Window>
