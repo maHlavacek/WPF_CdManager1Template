@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdManager.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="340" Width="511" MinHeight="180" MinWidth="392"
         Name="wdMain">
     <Grid>
         <Grid.RowDefinitions>
@@ -30,9 +30,10 @@
         </ListView>
 
         <UniformGrid Grid.Row="2" Rows="1" Columns="3">
-            <Button Margin="10">Neu</Button>
-            <Button Margin="10">Löschen</Button>
-            <Button Margin="10">Tracks bearbeiten</Button>
+            <Button Name="btnNew" Click="btnNew_Click" Margin="10">Neu</Button>
+            <Button Name="btnDelete" Click="btnDelete_Click" Margin="10">Löschen</Button>
+            <Button Name="btnEditTracks" Click="btnEditTracks_Click" Margin="10">Tracks bearbeiten</Button>
         </UniformGrid>
+        
     </Grid>
 </Window>

@@ -28,11 +28,29 @@ namespace CdManager.Wpf
             Loaded += new RoutedEventHandler(MainWindow_Loaded);
         }
 
-        void MainWindow_Loaded(Object sender, RoutedEventArgs e)
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             Repository rep = Repository.GetInstance();
             cds = rep.GetAllCds();
             lbxCds.ItemsSource = cds;
+
+            btnNew.Click += new RoutedEventHandler(btnNew_Click);
+        }
+
+        void btnNew_Click(object sender, RoutedEventArgs e)
+        {
+            AddCdWindow addCdWindow = new AddCdWindow();
+            addCdWindow.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEditTracks_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
