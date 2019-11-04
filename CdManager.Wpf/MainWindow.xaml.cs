@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CdManager.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace CdManager.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Cd> cds;
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += new RoutedEventHandler(MainWindow_Loaded);
+        }
+
+        void MainWindow_Loaded(Object sender, RoutedEventArgs e)
+        {
+            Repository rep = Repository.GetInstance();
+            cds = rep.GetAllCds();
+            lbxCds.ItemsSource = cds;
         }
     }
 }

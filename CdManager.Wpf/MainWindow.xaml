@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdManager.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525"
+        Name="wdMain">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -16,5 +17,16 @@
         <TextBlock Grid.Row="0" Margin="0,10,0,20">
             Cd-Sammlung
         </TextBlock>
+        
+        <ListView Grid.Row="1" Name="lbxCds">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Cd-Title" Width="200" DisplayMemberBinding="{Binding Path=AlbumTitle}"/>
+                        <GridViewColumn Header="Artist" Width="200" DisplayMemberBinding="{Binding Path=Artist}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
